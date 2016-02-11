@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+"""
+Copyright (C) 2016 Stephen Gaffney
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
+__author__ = 'Stephen G. Gaffney'
+
+import os
+import argparse
+from gene_matcher import run_matcher
+
+
+def extant_file(file_path):
+    """'Type' for argparse - checks that file exists but does not open."""
+    if not os.path.isfile(file_path):
+        raise argparse.ArgumentTypeError(
+            "{0} does not exist".format(file_path))
+    return file_path
+
+parser = argparse.ArgumentParser()
+parser.add_argument("text_path", help="Path to text file.", type=extant_file)
+args = parser.parse_args()
+run_matcher(args.text_path)
