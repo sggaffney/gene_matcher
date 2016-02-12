@@ -92,7 +92,7 @@ This will place the script `gene_matcher` on your path.
 License
 -------
 
-    Copyright (C) 2015 Stephen Gaffney
+    Copyright (C) 2016 Stephen Gaffney
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
