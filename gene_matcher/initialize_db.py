@@ -85,11 +85,3 @@ def build_user_db(ref_file=None, echo=False):
         user.drop(engine)
     meta.create_all(engine, tables=[user])
     return engine, meta, refs, user
-
-
-def import_user_list(user_path=None, engine=None):
-    if not user_path or not engine:
-        raise ValueError("Both user_path and engine must be specified.")
-    df = pd.read_csv(user_path, sep='\t', names=['user_symbol', 'chromosome'])
-    df.to_sql('user', engine, if_exists='append', index=False)
-    return user_path

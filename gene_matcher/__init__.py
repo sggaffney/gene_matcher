@@ -20,5 +20,4 @@ import os
 
 package_dir = os.path.dirname(os.path.abspath(__file__))
 
-from gene_matcher import run_matcher
-
+from gene_matcher import match_file, Matcher

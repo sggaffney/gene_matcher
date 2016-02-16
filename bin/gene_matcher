@@ -20,7 +20,7 @@ __author__ = 'Stephen G. Gaffney'
 
 import os
 import argparse
-from gene_matcher import run_matcher
+from gene_matcher import match_file
 
 
 def extant_file(file_path):
@@ -33,4 +33,4 @@ def extant_file(file_path):
 parser = argparse.ArgumentParser()
 parser.add_argument("text_path", help="Path to text file.", type=extant_file)
 args = parser.parse_args()
-run_matcher(args.text_path)
+match_file(args.text_path)

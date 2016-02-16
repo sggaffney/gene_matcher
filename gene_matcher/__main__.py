@@ -18,7 +18,7 @@ __author__ = 'Stephen G. Gaffney'
 
 import sys
 
-from gene_matcher import run_matcher
+from gene_matcher import match_file
 
 user_path = sys.argv[1]  # e.g 'test_genes.txt'
-run_matcher(user_path)
+match_file(user_path)
