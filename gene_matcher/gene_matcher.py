@@ -45,7 +45,7 @@ class Matcher(object):
 
     def set_data(self, symbols=None, chromosomes=None):
         """Create 'user' db table from user_symbol and chromosome iterables."""
-        if not symbols or not chromosomes:
+        if symbols is None or chromosomes is None:
             raise ValueError(
                 "Symbol and chromosome iterables must be specified.")
         if len(symbols) != len(chromosomes):
