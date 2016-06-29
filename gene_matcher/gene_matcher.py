@@ -19,7 +19,7 @@ __author__ = 'Stephen G. Gaffney'
 import os
 from collections import OrderedDict
 import pandas as pd
-from initialize_db import build_ref_db, build_user_db
+from .initialize_db import build_ref_db, build_user_db
 from . import package_dir
 
 
