@@ -14,13 +14,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
-__author__ = 'Stephen G. Gaffney'
 
 import os
 import pandas as pd
 from sqlalchemy import Table, Column, Integer, String, Index, MetaData, \
     create_engine
 from . import package_dir
+
+__author__ = 'Stephen G. Gaffney'
 
 
 def build_ref_db(ref_file=None):

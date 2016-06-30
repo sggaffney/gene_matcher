@@ -14,11 +14,13 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
-__author__ = 'Stephen G. Gaffney'
 
 import sys
 
 from .gene_matcher import match_file
+
+__author__ = 'Stephen G. Gaffney'
+
 
 user_path = sys.argv[1]  # e.g 'test_genes.txt'
 match_file(user_path)
