@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+
+"""
+Copyright (C) 2016 Stephen Gaffney
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
+
+import os
+import argparse
+from gene_matcher import update_maf_symbols
+
+__author__ = 'Stephen G. Gaffney'
+
+
+def extant_file(file_path):
+    """'Type' for argparse - checks that file exists but does not open."""
+    if not os.path.isfile(file_path):
+        raise argparse.ArgumentTypeError(
+            "{0} does not exist".format(file_path))
+    return file_path
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-m", "--maf", help="Path to input MAF file.",
+                    type=extant_file)
+parser.add_argument("-o", "--outfile", help="Path for output MAF file.")
+parser.add_argument("--drop", help="Drop rows with unmatched symbols.",
+                    action='store_true')
+args = parser.parse_args()
+out_path = update_maf_symbols(args.maf, out_path=args.outfile,
+                              drop_unmatched=args.drop)
+print("Updated MAF file saved to {}".format(out_path))

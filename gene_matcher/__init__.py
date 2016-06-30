@@ -14,10 +14,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
-__author__ = 'Stephen G. Gaffney'
 
 import os
+
+__author__ = 'Stephen G. Gaffney'
 
 package_dir = os.path.dirname(os.path.abspath(__file__))
 
 from .gene_matcher import match_file, Matcher
+from .update_maf import update_maf_symbols

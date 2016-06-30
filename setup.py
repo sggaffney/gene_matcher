@@ -13,6 +13,6 @@ setup(name='gene_matcher',
       install_requires=[
           'pandas', 'sqlalchemy'
       ],
-      scripts=['bin/gene_matcher'],
+      scripts=['bin/gene_matcher', 'bin/update_maf'],
       zip_safe=False,
       data_files=[('gene_matcher', ['gene_matcher/gene_lookup_refs.db'])])
