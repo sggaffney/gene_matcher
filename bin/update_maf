@@ -33,8 +33,7 @@ def extant_file(file_path):
 
 parser = argparse.ArgumentParser(
     description='Update symbols and entrez IDs in MAF file, saving to new file.')
-parser.add_argument("-m", "--maf", help="Path to input MAF file.",
-                    type=extant_file)
+parser.add_argument("maf", help="Path to input MAF file.", type=extant_file)
 parser.add_argument("-o", "--outfile", help="Path for output MAF file.")
 parser.add_argument("--drop", help="Drop rows with unmatched symbols.",
                     action='store_true')
