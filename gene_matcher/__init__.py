@@ -21,5 +21,5 @@ __author__ = 'Stephen G. Gaffney'
 
 package_dir = os.path.dirname(os.path.abspath(__file__))
 
-from .gene_matcher import match_file, Matcher
-from .update_maf import update_maf_symbols
+from gene_matcher.gene_matcher import match_file, Matcher
+from gene_matcher.update_maf import update_maf_symbols
