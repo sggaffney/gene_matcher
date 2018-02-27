@@ -31,7 +31,6 @@ for human genes.
 
 Matching is performed using symbols and synonym lists from the NCBI Gene database, using the reference file [Homo_sapiens.gene_info.gz][1]. The synonym list from this reference should be adequate for matching the vast majority of uncommon or out of date symbols, but will fail to match some LOCXXX genes and FLJXXX symbols.
 
-
 Usage
 -----
 
@@ -133,6 +132,4 @@ License
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
-[1]: ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz "Homo_sapiens.gene_info.gz"
-
+[1]: ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz
