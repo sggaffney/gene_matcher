@@ -42,6 +42,7 @@ def build_ref_db(ref_file=None):
                      )
         metaref.create_all(ref_engine, tables=[refs])  # create if not present
         df = pd.read_csv(os.path.join(package_dir, 'genes.txt'), sep='\t',
+                         header=0,
                          names=['geneId', 'hugo', 'chromosome',
                                 'synonyms', 'type_of_gene'])
         df.to_sql('refs', ref_engine, if_exists='append', index=False)

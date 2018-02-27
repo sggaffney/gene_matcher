@@ -15,5 +15,5 @@ setup(name='gene_matcher',
       ],
       scripts=['bin/gene_matcher', 'bin/update_maf'],
       zip_safe=False,
-      package_data={'gene_matcher': ['gene_lookup_refs.db']},
+      package_data={'gene_matcher': ['gene_lookup_refs.db', 'genes.txt']},
       )
