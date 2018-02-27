@@ -1,5 +1,17 @@
 # gene_matcher
 
+<!-- MarkdownTOC -->
+
+- [Usage](#usage)
+    - [Input](#input)
+    - [Output](#output)
+- [Installation](#installation)
+- [Gene database update](#gene-database-update)
+- [License](#license)
+
+<!-- /MarkdownTOC -->
+
+
 Looks up **HUGO symbols** and **Entrez IDs** from gene symbol–chromosome pairs
 for human genes.
 
@@ -21,8 +33,6 @@ Matching is performed using symbols and synonym lists from the NCBI Gene databas
 using the reference file [Homo_sapiens.gene_info.gz] [1]. The synonym list from 
 this reference should be adequate for matching the vast majority of uncommon or 
 out of date symbols, but will fail to match some LOCXXX genes and FLJXXX symbols.
-
-  [1]: ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz "Homo_sapiens.gene_info.gz"
 
 
 Usage
@@ -83,10 +93,28 @@ Installation
 Install the package into your local python distribution by running the following
 in the command line:
 ```
-python setup.py install
+pip install git+https://github.com/sggaffney/gene_matcher.git
 ```
 
 This will place the script `gene_matcher` on your path.
+
+
+Gene database update
+---------------
+
+To update the reference gene set to the latest version from NCBI Gene database, export the following columns from the [reference file][1] into a new tab-separated text file (`genes.txt`): `geneId`, `symbol`, `chromosome`, `Synonyms`, `type_of_gene`.
+
+*Note*: If you have a MySQL database reflecting the current table, you can export as follows:
+```sql
+select 'geneId', 'symbol', 'chromosome', 'Synonyms', 'type_of_gene'
+union all
+select `geneId`, `symbol`, `chromosome`, `Synonyms`, `type_of_gene` from ncbi_entrez where `Symbol_from_nomenclature_authority` <> '-'
+into outfile '/tmp/genes.txt';
+```
+
+Use this file to overwrite the `genes.txt` file in your `gene_matcher.__path__` directory, and delete the current `gene_lookup_refs.db` file in the same directory. This database file will be rebuilt when you next import the package:
+
+ ```python -c "import gene_matcher"```
 
 
 License
@@ -107,4 +135,6 @@ License
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+  [1]: ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz "Homo_sapiens.gene_info.gz"
 
