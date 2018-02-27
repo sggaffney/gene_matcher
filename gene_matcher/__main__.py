@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 
-from gene_matcher.gene_matcher import match_file
+from .gene_matcher import match_file
 
 __author__ = 'Stephen G. Gaffney'
 

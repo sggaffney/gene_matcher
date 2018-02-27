@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import os
 from collections import OrderedDict
 import pandas as pd
-from gene_matcher.initialize_db import build_ref_db, build_user_db
+from .initialize_db import build_ref_db, build_user_db
 from . import package_dir
 
 __author__ = 'Stephen G. Gaffney'
