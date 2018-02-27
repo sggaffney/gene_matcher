@@ -120,8 +120,8 @@ class Matcher(object):
         """Execute pre-defined series of SQL commands."""
         m_hugo = "user.user_symbol = hugo"
         m_chr = "user.chromosome = chromosome"
-        m_synonym = "',' || synonyms || ',' LIKE '%,' " \
-                    "|| user.user_symbol || ',%'"
+        m_synonym = "'|' || synonyms || '|' LIKE '%|' " \
+                    "|| user.user_symbol || '|%'"
         m_chr_amb = "chromosome like '%|%' AND '|' || chromosome || '|' " \
                     "LIKE '%|' || user.chromosome || '|%'"
         m_type = "type_of_gene not in ('pseudo', 'unknown', 'other')"
