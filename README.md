@@ -29,10 +29,7 @@ for human genes.
     2-Feb, chr19 -> FEB2, entrez 2234
     ```
 
-Matching is performed using symbols and synonym lists from the NCBI Gene database,
-using the reference file [Homo_sapiens.gene_info.gz] [1]. The synonym list from 
-this reference should be adequate for matching the vast majority of uncommon or 
-out of date symbols, but will fail to match some LOCXXX genes and FLJXXX symbols.
+Matching is performed using symbols and synonym lists from the NCBI Gene database, using the reference file [Homo_sapiens.gene_info.gz][1]. The synonym list from this reference should be adequate for matching the vast majority of uncommon or out of date symbols, but will fail to match some LOCXXX genes and FLJXXX symbols.
 
 
 Usage
@@ -114,8 +111,9 @@ into outfile '/tmp/genes.txt';
 
 Use this file to overwrite the `genes.txt` file in your `gene_matcher.__path__` directory, and delete the current `gene_lookup_refs.db` file in the same directory. This database file will be rebuilt when you next import the package:
 
- ```python -c "import gene_matcher"```
-
+```
+python -c "import gene_matcher"`
+```
 
 License
 -------
@@ -136,5 +134,5 @@ License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-  [1]: ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz "Homo_sapiens.gene_info.gz"
+[1]: ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz "Homo_sapiens.gene_info.gz"
 
